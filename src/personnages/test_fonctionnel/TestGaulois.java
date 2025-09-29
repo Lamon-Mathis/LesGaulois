@@ -1,6 +1,5 @@
 package personnages.test_fonctionnel;
 
-import java.util.Iterator;
 
 import objets.Chaudron;
 import personnages.Druide;

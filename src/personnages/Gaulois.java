@@ -6,7 +6,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
-	private Village[] village = new Village[1];
+	private Village village ;
 	
 
 	public Gaulois(String nom, int force) {
@@ -50,7 +50,7 @@ public class Gaulois {
 	}
 
 	public void setVillage(Village village) {
-		this.village[0] = village;
+		this.village = village;
 	}
 
 

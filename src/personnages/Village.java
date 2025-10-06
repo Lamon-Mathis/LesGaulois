@@ -40,6 +40,10 @@ public class Village {
 			return villageois[numero-1];
 		}
 	}
+	public static void main(String[] args) {
+		Gaulois Abraracourcix = new Gaulois("Abraracourcix", 6);
+		
+	}
 
 	
 	

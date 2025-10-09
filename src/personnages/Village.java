@@ -6,7 +6,7 @@ import personnages.Gaulois;
 
 public class Village {
 	private String nom;
-	private int nbVillageois = 0;
+	private int nbVillageois;
 	private Gaulois chef;
 	private Gaulois[] villageois;
 
@@ -14,7 +14,10 @@ public class Village {
 		this.nom = nom;
 		villageois = new Gaulois[NB_VILLAGEOIS_MAX];
 		this.chef = chef;
-
+		nbVillageois =0;
+		
+		chef.setVillage(this);
+		chef.setEstChef(true);
 	}
 
 	public String getNom() {
@@ -28,14 +31,14 @@ public class Village {
 	public void ajouterVillageois(Gaulois gaulois) {
 		if (nbVillageois < villageois.length) {
 			villageois[nbVillageois] = gaulois;
-			nbVillageois++;
 			gaulois.setVillage(this);
+			nbVillageois++;
 
 		}
 	}
 
 	public Gaulois trouverVillageois(int numero) {
-		if (numero - 1 > nbVillageois) {
+		if (numero > nbVillageois) {
 			System.out.println("Il n'y a pas autant d'habitants dans notre village !");
 			return null;
 		} else {
@@ -44,21 +47,30 @@ public class Village {
 	}
 
 	public void afficherVillageois(Village village) {
-		System.out.println("Dans le village " + "\"" + village.getNom()+ "\" du chef" + village.getChef() + "vivent les légendaires gaulois :");
-		for (Gaulois gaulois : villageois) {
-			System.out.println("- "+ gaulois);
+		System.out.println("Dans le village " + "\"" + village.getNom()+ "\" du chef" + village.getChef().getNom() + "vivent les lÃ©gendaires gaulois :");
+		for (int i = 0; i < nbVillageois; i++) {
+			System.out.println("- " + villageois[i].getNom());
+			
 		}
 	}
 	
 	public static void main(String[] args) {
 		Gaulois abraracourcix = new Gaulois("Abraracourcix", 6);
-		Village village = new Village("Village des Irréductibles", 30, abraracourcix);
-		Gaulois asterix = new Gaulois("Astérix", 8);
+		Village village = new Village("Village des IrrÃ©ductibles", 30, abraracourcix);
+		Gaulois asterix = new Gaulois("AstÃ©rix", 8);
 		village.ajouterVillageois(asterix);
 		Gaulois gaulois = village.trouverVillageois(1);
 		System.out.println(gaulois);
 		gaulois = village.trouverVillageois(2);
 		System.out.println(gaulois);
+		Gaulois obelix = new Gaulois("ObÃ©lix", 25);
+		village.ajouterVillageois(obelix);
+		village.afficherVillageois(village);
+		Gaulois doublepolemix = new Gaulois("DoublepolÃ©mix",4);
+		
+		abraracourcix.sePresenter();
+		asterix.sePresenter();
+		doublepolemix.sePresenter();
 
 	}
 

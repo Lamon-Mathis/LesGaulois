@@ -26,7 +26,7 @@ public class Druide {
 
 	public void fabriquerPotion(int quantite, int forcePotion) {
 		chaudron.remplirChaudron(quantite, forcePotion);
-		parler("J'ai concoctï¿½ " + quantite + " doses de potion magique. Elle a une force de " + forcePotion + ".");
+		parler("J'ai concocté " + quantite + " doses de potion magique. Elle a une force de " + forcePotion + ".");
 	}
 
 	public void booster(Gaulois gaulois) {

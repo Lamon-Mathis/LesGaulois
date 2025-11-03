@@ -6,7 +6,7 @@ public class Village {
 	private Gaulois[] villageois;
 	private int nbVillageois = 0;
 
-	public Village(String nom, int NB_VILLAGEOIS_MAX, Gaulois chef) {
+	public Village(String nom, final int NB_VILLAGEOIS_MAX, Gaulois chef) {
 		this.nom = nom;
 		villageois = new Gaulois[NB_VILLAGEOIS_MAX];
 		this.chef = chef;

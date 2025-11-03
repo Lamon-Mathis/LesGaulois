@@ -5,14 +5,13 @@ import objets.Equipement;
 public class Romain {
 	private String nom;
 	private int force;
-	private int nbEquipement;
+	private int nbEquipement = 0;
 	private Equipement[] equipements;
 	private static final String LE_SOLDAT = "Le soldat ";
 
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
-		this.nbEquipement = 0;
 		this.equipements = new Equipement[2];
 		assert isInvariantVerified();
 	}
